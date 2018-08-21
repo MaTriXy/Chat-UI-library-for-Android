@@ -1,47 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-              android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="match_parent"
+              android:orientation="vertical">
 
-    <FrameLayout
-        android:id="@+id/chat_container"
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/chatContainer"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="0dp"
         android:layout_weight="1">
 
-        <jp.bassaer.chatmessageview.views.MessageView
-            android:id="@+id/message_view"
+        <com.github.bassaer.chatmessageview.view.MessageView
+            android:id="@+id/messageView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:listSelector="@android:color/transparent"
-            android:cacheColorHint="@android:color/transparent"/>
+            android:cacheColorHint="@android:color/transparent"
+            android:listSelector="@android:color/transparent"/>
 
-    </FrameLayout>
-
+    </android.support.v4.widget.SwipeRefreshLayout>
 
 
     <LinearLayout
-        android:orientation="horizontal"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/icon_normal"
+        android:layout_height="wrap_content"
         android:background="@color/blueGray50"
-        >
+        android:orientation="horizontal">
+
+        <FrameLayout
+            android:id="@+id/optionButtonContainer"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
 
         <EditText
-            android:id="@+id/message_edit_text"
-            android:layout_width="match_parent"
+            android:id="@+id/inputBox"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:layout_weight="1"
             android:hint="@string/input_hint"
-            android:layout_weight="1"/>
+            android:maxLines="3"/>
 
         <ImageButton
-            android:id="@+id/send_button"
+            android:id="@+id/sendButton"
+            style="@style/Base.Widget.AppCompat.Button.Borderless"
             android:layout_width="@dimen/icon_normal"
             android:layout_height="@dimen/icon_normal"
             android:src="@drawable/ic_action_send"
-            style="@style/Base.Widget.AppCompat.Button.Borderless"
-            />
+            android:contentDescription="@string/send" />
 
     </LinearLayout>
 

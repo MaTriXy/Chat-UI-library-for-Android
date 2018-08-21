@@ -41,6 +41,16 @@ captures/
 .idea/workspace.xml
 .idea/tasks.xml
 .idea/libraries
+.idea/vcs.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/markdown-navigator/
+.idea/markdown-navigator.xml
+.idea/codeStyleSettings.xml
+.idea/markdown-exported-files.xml
+
+projectFilesBackup/
+
 
 # Keystore files
 *.jks
